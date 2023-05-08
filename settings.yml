@@ -1,0 +1,17 @@
+outputs:
+  final_time: 2e-9      # simulate one nanosecond
+
+mesh:
+  filename: cylinder.msh
+  scaling_factor: 1e-9  # mesh unit is nanometers
+  volume_regions:
+    volume:             # high-damping permalloy
+      Ae: 1.07e-11         # exchange constant
+      Js: 1             # µ₀Ms
+      alpha_LLG: 0.01   # Gilbert damping
+  surface_regions:
+    surface:
+
+initial_magnetization: [0.99, 0.01, 0]  
+
+Bext: [0.02*sin(2*3.14*2e9*t), 0.02*sin(2*3.14*2e9*t), 0.02*sin(2*3.14*2e9*t)]
