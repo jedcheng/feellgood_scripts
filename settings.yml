@@ -1,5 +1,7 @@
 outputs:
   final_time: 2e-9      # simulate one nanosecond
+  directory: cylinder
+  evol_time_step: 5e-13
 
 mesh:
   filename: cylinder.msh
@@ -7,11 +9,12 @@ mesh:
   volume_regions:
     volume:             # high-damping permalloy
       Ae: 1.07e-11         # exchange constant
-      Js: 1             # µ₀Ms
+      Js: 1.1             # µ₀Ms
       alpha_LLG: 0.01   # Gilbert damping
   surface_regions:
     surface:
 
 initial_magnetization: [0.99, 0.01, 0]  
 
-Bext: [0.02*sin(2*3.14*2e9*t), 0.02*sin(2*3.14*2e9*t), 0.02*sin(2*3.14*2e9*t)]
+Bext: [0.02*sinc(2*3.14*25e9*t), 0.02*sinc(2*3.14*25e9*t), 0.02*sinc(2*3.14*25e9*t)]
+
